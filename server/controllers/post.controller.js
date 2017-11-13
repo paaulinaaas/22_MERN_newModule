@@ -88,3 +88,21 @@ export function deletePost(req, res) {
     });
   });
 }
+
+export function thumbUpPost(req, res) {
+  Post.findOne({ cuid: req.params.cuid }, { $inc: { votes: 1 } }).exec((err, post) => {
+    if (err) {
+      res.status(500).send(err);
+    }
+   res.json({ post });
+  });
+}
+
+export function thumbDownPost(req, res) {
+  Post.findOne({ cuid: req.params.cuid }, { $inc: { votes: -1 } }).exec((err, post) => {
+    if (err) {
+      res.status(500).send(err);
+    }
+   res.json({ post });
+  });
+}
