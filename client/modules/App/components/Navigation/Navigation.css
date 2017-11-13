@@ -1,0 +1,11 @@
+.navigation {
+  background: gray;
+  display: block;
+}
+
+.navigation li {
+  display: inline-block;
+  margin: 15px;
+  cursor: pointer;
+  color: #fff;
+}
