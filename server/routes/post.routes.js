@@ -17,4 +17,8 @@ router.route('/posts/:cuid').put(PostController.editPost);
 // Delete a post by cuid
 router.route('/posts/:cuid').delete(PostController.deletePost);
 
+router.route('/posts/votes/add/:cuid').put(PostController.thumbUpPost);
+
+router.route('/posts/votes/subtract/:cuid').put(PostController.thumbDownPost);
+
 export default router;
